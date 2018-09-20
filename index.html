@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>趋势预览</title>
+    <link href="../public/libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../public/stylesheets/admin.css" rel="stylesheet">
+    <link href="../public/libs/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../public/libs/animate.css/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cache.amap.com/lbs/static/main1119.css" />
+    <style type="text/css">
+    body,
+    html,
+    #container {
+        width: 100%;
+        height: 100%;
+        margin: 0px
+    }
+
+    .info {
+        border: solid 1px silver;
+    }
+
+    div.info-top {
+        position: relative;
+        background: none repeat scroll 0 0 #F9F9F9;
+        border-bottom: 1px solid #CCC;
+        border-radius: 5px 5px 0 0;
+    }
+
+    div.info-top div {
+        display: inline-block;
+        color: #333333;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 31px;
+        padding: 0 10px;
+    }
+
+    div.info-top img {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        transition-duration: 0.25s;
+    }
+
+    div.info-top img:hover {
+        box-shadow: 0px 0px 5px #000;
+    }
+
+    div.info-middle {
+        font-size: 12px;
+        padding: 6px;
+        line-height: 20px;
+    }
+
+    div.info-bottom {
+        height: 0px;
+        width: 100%;
+        clear: both;
+        text-align: center;
+    }
+
+    div.info-bottom img {
+        position: relative;
+        z-index: 104;
+    }
+
+    span {
+        margin-left: 5px;
+        font-size: 11px;
+    }
+
+    .info-middle img {
+        float: left;
+        margin-right: 6px;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <nav role="navigation" class="navbar-default navbar-static-side">
+            <div class="sidebar-collapse">
+                <ul id="side-menu" class="nav metismenu">
+                    <li class="nav-header">
+                        <div class="dropdown profile-element">
+                            <span>
+                                <a href="/" target="_blank">
+                                    <img alt="image" class="img-circle img-lg" src="./public/images/loginss.jpg">
+                                </a>
+                            </span>
+                            <a href="/">
+                                <h4>后台管理</h4>
+                            </a>
+                        </div>
+                        <div class="logo-element">
+                            <img alt="image" class="img-circle img-sm" src="./public/images/loginss.jpg">
+                        </div>
+                    </li>
+                    <li>
+                        <a href="/">
+                            <i class="fa fa-bar-chart-o"></i>
+                            <span class="nav-label">趋势预览</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-file-text-o"></i>
+                            <span class="nav-label">XXX</span>
+                            <span class="fa arrow"></span>
+                        </a>
+                        <ul class="nav nav-second-level collapse">
+                            <li>
+                                <a href="javascript:;">XXX</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">XXX</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">XXX</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <i class="fa fa-comments-o"></i>
+                            <span class="nav-label">XXX</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <i class="fa fa-edit"></i>
+                            <span class="nav-label">XXX</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <i class="fa fa-user"></i>
+                            <span class="nav-label">XXX</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <i class="fa fa-database"></i>
+                            <span class="nav-label">XXX</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <i class="fa fa-bug"></i>
+                            <span class="nav-label">XXX</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <i class="fa fa-gears"></i>
+                            <span class="nav-label">XXX</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div id="page-wrapper" class="gray-bg">
+            <div class="row border-bottom">
+                <nav role="navigation" style="margin-bottom: 0" class="navbar navbar-static-top">
+                    <div class="navbar-header">
+                        <a href="#" class="navbar-minimalize minimalize-styl-2 btn btn-primary">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </div>
+                    <form id="logoutForm" action="/logout" method="Post">
+                        <ul class="nav navbar-top-links navbar-right">
+                            <li>
+                                <a href="javascript:;" title=''>
+                                    <i class="fa fa-power-off"></i> XXX
+                                </a>
+                            </li>
+                        </ul>
+                    </form>
+                </nav>
+            </div>
+            <div id="container"></div>
+            <div class="footer">
+                <div class="text-center">
+                    2018 © All Rights Reserved | 北ICP备XXX号
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div id="container"></div> -->
+</body>
+<script type="text/javascript" src="../public/libs/jquery/dist/jquery.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="../public/libs/bootstrap/dist/js/bootstrap.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="../public/libs/metisMenu/dist/metisMenu.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="../public/javascripts/admin.js" charset="utf-8"></script>
+
+<script type="text/javascript" src='https://webapi.amap.com/maps?v=1.4.10&key=06b2553133c691436ef5f9b6a559f837'></script>
+<!-- <script src="//a.amap.com/jsapi_demos/static/china.js"></script> -->
+<script type="text/javascript" src='https://a.amap.com/jsapi_demos/static/citys.js'></script>
+<script type="text/javascript">
+var map = new AMap.Map('container', {
+    resizeEnable: true,
+    center: [119.315844, 35.119794],
+    zoom: 7,
+    mapStyle: 'amap://styles/6e06332a1ea764ec710f7300bd10c22a', //设置地图的显示样式
+});
+
+var style = [{
+    url: 'https://a.amap.com/jsapi_demos/static/images/mass0.png',
+    anchor: new AMap.Pixel(6, 6),
+    size: new AMap.Size(11, 11), // 图标大小
+}, {
+    url: 'https://a.amap.com/jsapi_demos/static/images/mass1.png',
+    anchor: new AMap.Pixel(6, 6),
+    size: new AMap.Size(11, 11), // 图标大小
+}, {
+    url: 'https://a.amap.com/jsapi_demos/static/images/mass2.png',
+    anchor: new AMap.Pixel(6, 6),
+    size: new AMap.Size(11, 11), // 图标大小
+}];
+
+//实例化信息窗体
+var title = '方恒假日酒店<span style="font-size:11px;color:#F00;">价格:318</span>',
+    content = [];
+content.push("<img src='http://tpc.googlesyndication.com/simgad/5843493769827749134'>地址：北京市朝阳区阜通东大街6号院3号楼东北8.3公里");
+content.push("电话：010-64733333");
+content.push("<a href='./test.html'>详细信息</a>");
+var infoWindow = new AMap.InfoWindow({
+    isCustom: true,  //使用自定义窗体
+    content: createInfoWindow(title, content.join("<br/>")),
+    offset: new AMap.Pixel(16, -45)
+});
+//构建自定义信息窗体
+function createInfoWindow(title, content) {
+    var info = document.createElement("div");
+    info.className = "info";
+
+    //可以通过下面的方式修改自定义窗体的宽高
+    //info.style.width = "400px";
+    // 定义顶部标题
+    var top = document.createElement("div");
+    var titleD = document.createElement("div");
+    var closeX = document.createElement("img");
+    top.className = "info-top";
+    titleD.innerHTML = title;
+    closeX.src = "https://webapi.amap.com/images/close2.gif";
+    closeX.onclick = closeInfoWindow;
+
+    top.appendChild(titleD);
+    top.appendChild(closeX);
+    info.appendChild(top);
+
+    // 定义中部内容
+    var middle = document.createElement("div");
+    middle.className = "info-middle";
+    middle.style.backgroundColor = 'white';
+    middle.innerHTML = content;
+    info.appendChild(middle);
+
+    // 定义底部内容
+    var bottom = document.createElement("div");
+    bottom.className = "info-bottom";
+    bottom.style.position = 'relative';
+    bottom.style.top = '0px';
+    bottom.style.margin = '0 auto';
+    var sharp = document.createElement("img");
+    sharp.src = "https://webapi.amap.com/images/sharp.png";
+    bottom.appendChild(sharp);
+    info.appendChild(bottom);
+    return info;
+}
+
+//关闭信息窗体
+function closeInfoWindow() {
+    map.clearInfoWindow();
+}
+
+//热点
+var mass = new AMap.MassMarks(citys, {
+    opacity: 0.8,
+    zIndex: 111,
+    cursor: 'pointer',
+    style: style
+});
+
+mass.on('click', function(e) {
+    console.log(e.data.lnglat)
+    infoWindow.open(map, e.data.lnglat);
+    // infoWindow.open(map, marker.getPosition());
+    // marker.setPosition(e.data.lnglat);
+    // marker.setLabel({ content: e.data.name })
+})
+mass.setMap(map);
+</script>
+
+</html>

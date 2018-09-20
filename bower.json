@@ -1,0 +1,25 @@
+{
+  "name": "collection_wrok",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "huanghanzhilian <1319639755@qq.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "animate.css": "^3.7.0",
+    "font-awesome": "4.5.0",
+    "bootstrap": "3.3.6",
+    "metisMenu": "2.4.0",
+    "sb-admin-2": "*"
+  }
+}

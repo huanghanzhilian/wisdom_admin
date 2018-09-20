@@ -1,0 +1,17 @@
+{
+  "name": "collection_wrok",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  },
+  "description": ""
+}
